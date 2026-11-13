@@ -192,6 +192,7 @@ profile_info() {
         s-fe-9925) echo "SM-S711 r11s s5e9925 bar" ;;
         s-fe-8450) echo "SM-S711 r11q SM8450 bar" ;;
         s-plus-9925) echo "SM-S906 g0s s5e9925 bar" ;;
+        s-plus-8450) echo "SM-S906 g0q SM8450 bar" ;;
         s-ultra-9925) echo "SM-S908 b0s s5e9925 bar" ;;
         s-ultra-8450) echo "SM-S908 b0q SM8450 bar" ;;
         s-ultra-8450-jp) echo "SCG14 SCG14 SM8450 bar" ;;
@@ -459,6 +460,7 @@ profile_set() {
         "s-fe-9925 oxygenos16-cph2745") echo oxygen16 ;;
         "s-fe-8450 oxygenos16-cph2745") echo oxygen16 ;;
         "s-plus-9925 oxygenos16-cph2745") echo oxygen16 ;;
+        "s-plus-8450 oxygenos16-cph2745") echo oxygen16 ;;
         "s-ultra-9925 oxygenos16-cph2745") echo oxygen16 ;;
         "s-ultra-8450 oxygenos16-cph2745") echo oxygen16 ;;
         "s-ultra-8450-jp oxygenos16-cph2745") echo oxygen16 ;;

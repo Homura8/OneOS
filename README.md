@@ -112,6 +112,8 @@ Newer additions, each untested until a report says otherwise
 ([docs/devices.md](docs/devices.md) has today's state): from 0.4.67, OxygenOS 16
 (Android 16) for phones still on One UI 8.0 or 8.5: the Galaxy S22 series, the
 S23 FE and A, F and M phones, and from 0.4.91 the Galaxy S23, S23+ and S23 Ultra;
+the Snapdragon Galaxy S22+ (SM-S906E / g0q) also has an experimental OxygenOS 16
+profile in this fork, separate from the Exynos S22+ profile; it has not yet been boot-tested;
 from 0.4.73, OriginOS 7 (vivo, Android 17) on the
 Snapdragon Galaxy S26 and S25 phones and the Z Fold8 Ultra, Z Fold8 and Z Fold7,
 and from 0.4.82 on the Snapdragon S24 and S23 phones; and in 0.4.83 the Galaxy

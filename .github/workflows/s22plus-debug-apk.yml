@@ -1,0 +1,40 @@
+name: Experimental S22+ debug APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feat/s22plus-snapdragon-oxygenos
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+      - name: Install Android platform
+        run: sdkmanager --install 'platforms;android-37' 'build-tools;36.1.0'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Check model and root-script tests
+        working-directory: app-android
+        run: ./gradlew :core:model:test :core:root:test --no-daemon --max-workers=2
+      - name: Stage debug guest manager
+        run: ./scripts/build-guest-manager.sh debug
+      - name: Build experimental OneOS app
+        working-directory: app-android
+        run: ./gradlew :app:assembleFullDebug --no-daemon --max-workers=2
+      - name: Upload unsigned-for-release test build (debug signed)
+        uses: actions/upload-artifact@v4
+        with:
+          name: OneOS-S22Plus-Snapdragon-EXPERIMENTAL-debug
+          path: app-android/app/build/outputs/apk/full/debug/app-full-debug.apk
+          if-no-files-found: error
+          retention-days: 7
