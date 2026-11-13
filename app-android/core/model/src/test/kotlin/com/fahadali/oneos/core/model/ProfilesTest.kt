@@ -289,7 +289,7 @@ class ProfilesTest {
                 Profiles.A26, Profiles.A17, Profiles.A16, Profiles.S_9965, Profiles.A16_4G, Profiles.A16_S166, Profiles.A35, Profiles.A54, Profiles.A27, Profiles.A17_5G, Profiles.FLIP7_FE,
                 Profiles.A06, Profiles.A07_5G, Profiles.A15, Profiles.A24, Profiles.A25, Profiles.A33, Profiles.A34, Profiles.A53, Profiles.E55,
                 Profiles.S_FE_9925, Profiles.S_FE_8450, Profiles.S_PLUS_9925, Profiles.S_ULTRA_9925, Profiles.S_ULTRA_8450,
-                Profiles.A55, Profiles.S25_FE, Profiles.S_8450, Profiles.M55S, Profiles.S_ULTRA_8450_JP, Profiles.S_PLUS_9945,
+                Profiles.A55, Profiles.S25_FE, Profiles.S_8450, Profiles.S_PLUS_8450, Profiles.M55S, Profiles.S_ULTRA_8450_JP, Profiles.S_PLUS_9945,
                 Profiles.S_ULTRA_8550_JP, Profiles.S_9925, Profiles.A16_MTK, Profiles.S_8550_JP,
                 Profiles.M35, Profiles.A15_5G,
             ),
@@ -297,7 +297,7 @@ class ProfilesTest {
         )
         // 0.4.67: the phones still on One UI 8 take OxygenOS 16 only, untested, as bar phones.
         for (p in listOf(Profiles.A06, Profiles.A07_5G, Profiles.A24, Profiles.A25, Profiles.A33, Profiles.A53, Profiles.E55,
-                Profiles.S_FE_9925, Profiles.S_FE_8450, Profiles.S_PLUS_9925, Profiles.S_ULTRA_9925, Profiles.S_ULTRA_8450, Profiles.S_8450, Profiles.M55S, Profiles.S_ULTRA_8450_JP,
+                Profiles.S_FE_9925, Profiles.S_FE_8450, Profiles.S_PLUS_9925, Profiles.S_ULTRA_9925, Profiles.S_ULTRA_8450, Profiles.S_8450, Profiles.S_PLUS_8450, Profiles.M55S, Profiles.S_ULTRA_8450_JP,
                 Profiles.S_9925, Profiles.A16_MTK, Profiles.A15_5G)) {
             assertEquals(p.id, listOf(ImageChoice(Images.ID_OXYGEN16, PackageSets.ID_OXYGEN16, tested = false)), p.choices)
             assertEquals(p.id, FormFactor.BAR, p.form)
@@ -408,6 +408,11 @@ class ProfilesTest {
             listOf(Profiles.S25_FE.choices, Profiles.S25_FE.notes, Profiles.S25_FE.form),
         )
         assertEquals(Profiles.S_8450, Profiles.resolve("SM-S901U", "r0q", "SM8450").profile)
+        assertEquals(Profiles.S_PLUS_8450, Profiles.resolve("SM-S906E", "g0q", "SM8450").profile)
+        assertEquals(Profiles.S_PLUS_8450.choices, Profiles.S_ULTRA_8450.choices)
+        assertNull(Profiles.resolve("SM-S906E", "g0s", "SM8450").profile)
+        assertNull(Profiles.resolve("SM-S906E", "g0q", "s5e9925").profile)
+        assertEquals(Profiles.S_PLUS_9925, Profiles.resolve("SM-S906B", "g0s", "s5e9925").profile)
         // 0.4.93: the Exynos S22 (now on One UI 8.0), the S22+'s choice and note; neither S22 by the other's chip.
         assertEquals(Profiles.S_9925, Profiles.resolve("SM-S901B", "r0s", "s5e9925").profile)
         assertEquals(listOf(Profiles.S_PLUS_9925.choices, Profiles.S_PLUS_9925.notes), listOf(Profiles.S_9925.choices, Profiles.S_9925.notes))

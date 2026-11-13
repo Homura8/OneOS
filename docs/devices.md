@@ -317,11 +317,17 @@ SM-M558, Snapdragon 7 Gen 1
 
 ## Galaxy S22+
 
-SM-S906, s5e9925
+**SM-S906, s5e9925 (Exynos)**
 
 | System | Status |
 |---|---|
 | OxygenOS 16 | ✅ starts (1 report, OneOS 0.4.71); problems reported: Screen, Bluetooth, Google |
+
+**SM-S906, SM8450 (Snapdragon, g0q)**
+
+| System | Status |
+|---|---|
+| OxygenOS 16 | 🔲 not tested yet |
 
 ## Galaxy S23
 

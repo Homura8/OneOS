@@ -111,6 +111,7 @@ object Profiles {
     const val ID_S_FE_9925 = "s-fe-9925"
     const val ID_S_FE_8450 = "s-fe-8450"
     const val ID_S_PLUS_9925 = "s-plus-9925"
+    const val ID_S_PLUS_8450 = "s-plus-8450"
     const val ID_S_ULTRA_9925 = "s-ultra-9925"
     const val ID_S_ULTRA_8450 = "s-ultra-8450"
     const val ID_S_ULTRA_8450_JP = "s-ultra-8450-jp"
@@ -1224,6 +1225,15 @@ object Profiles {
     val S_8450 = S_ULTRA_8450.copy(id = ID_S_8450, label = "Galaxy S22 (Snapdragon)", modelPrefix = "SM-S901", codename = "r0q")
 
     /**
+     * Galaxy S22+ Snapdragon (SM-S906E and other g0q variants, SM8450). The S22 and S22 Ultra
+     * Snapdragon already offer OxygenOS 16 on One UI 8; this sibling has not been tested yet.
+     * Keep g0q / SM8450 distinct from the Exynos S22+ (g0s / s5e9925).
+     */
+    val S_PLUS_8450 = S_ULTRA_8450.copy(
+        id = ID_S_PLUS_8450, label = "Galaxy S22+ (Snapdragon)", modelPrefix = "SM-S906", codename = "g0q",
+    )
+
+    /**
      * Galaxy M55s, from 0.4.70: findings of 2026-11-08 (SM-M558B, m55xq, Snapdragon 7 Gen 1 SM7450
      * "taro", One UI 8.5, Android 16 build BP4A.251205.006, vendor and board API 31, kernel 5.10
      * android12, one 1080 x 2400 panel on port 130 at density 450, backlight panel0-backlight (max
@@ -1289,7 +1299,7 @@ object Profiles {
         S_PLUS_9965, FLIP7, A56, A57, FLIP5, FOLD6, A07, FLIP8, A36, FOLD5,
         S_ULTRA_8550, FLIP6, S_9945, S_EDGE_8750, S_FE_9945, A26, A17, A16, S_9965, A16_4G, A16_S166, A35, A54, A27, A17_5G, FLIP7_FE,
         A06, A07_5G, A15, A24, A25, A33, A34, A53, E55, S_FE_9925, S_FE_8450, S_PLUS_9925, S_ULTRA_9925, S_ULTRA_8450,
-        A55, S25_FE, S_8450, M55S, S_ULTRA_8450_JP, S_PLUS_9945, S_ULTRA_8550_JP, S_9925, A16_MTK, S_8550_JP, M35, A15_5G,
+        A55, S25_FE, S_8450, S_PLUS_8450, M55S, S_ULTRA_8450_JP, S_PLUS_9945, S_ULTRA_8550_JP, S_9925, A16_MTK, S_8550_JP, M35, A15_5G,
     )
 
     /** `ro.build.version.oneui` values seen on profiled phones (all One UI 9.0). */
